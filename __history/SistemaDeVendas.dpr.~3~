@@ -1,0 +1,20 @@
+program SistemaDeVendas;
+
+uses
+  Vcl.Forms,
+  UMain in 'UMain.pas' {Form2},
+  UfCadastrarCliente in 'UfCadastrarCliente.pas' {Form3},
+  uBaseDAO in 'DAO\uBaseDAO.pas',
+  UCadastroClienteDAO in 'UCadastroClienteDAO.pas',
+  uDM in 'Model\uDM.pas' {DM: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TForm3, Form3);
+  Application.CreateForm(TDM, DM);
+  Application.Run;
+end.
